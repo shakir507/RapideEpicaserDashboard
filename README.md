@@ -224,6 +224,3 @@ ICU stay; Destination identifies where the patient goes next.
 Shakir Bilal
 
 ## Licence
-<!-- 
-See the License field in DESCRIPTION and any accompanying
-licence files. -->
