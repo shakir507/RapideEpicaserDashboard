@@ -1,0 +1,22 @@
+Package: RapideEpicaserDashboard
+Type: Package
+Title: RAPIDE Epidemiological Simulation Dashboard
+Version: 0.1.0
+Authors@R: person("Shakir", "Bilal",
+    email = "shakir.bilal@gmail.com",
+    role = c("aut", "cre"))
+Description: A Shiny dashboard using the epicaser engine to
+    simulate epidemic cases, age cohorts, hospital arrivals
+    and patient pathways.
+License: GPL-3
+Encoding: UTF-8
+Imports:
+    shiny,
+    bslib,
+    dplyr,
+    tidyr,
+    ggplot2,
+    DT,
+    epicaser
+Remotes:
+    JimDuggan/epicaser
