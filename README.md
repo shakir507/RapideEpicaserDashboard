@@ -7,7 +7,6 @@ and patient pathways using the EpiCASER engine.
 ## Requirements
 
 - R installed on your computer.
-- An internet connection for installation.
 - RStudio is optional.
 
 ## Installation
@@ -62,7 +61,7 @@ To stop the app, press Esc in RStudio or Ctrl+C in a terminal.
 3. Select whether to generate hospital arrivals and pathways.
 4. Click Run pipeline.
 5. Inspect the result tabs.
-6. Use Export / run details to download a dataset.
+6. Use Export / run details to download a dataset as csv.
 
 Changing inputs does not rerun the model until you click
 Run pipeline. When multiple runs are generated, use
@@ -202,6 +201,23 @@ remotes::install_local(
   upgrade = "never"
 )
 ```
+
+## Example patient pathway output
+
+Each row represents a stage in a patient's hospital pathway.
+The same admission identifier can therefore appear in multiple rows.
+Duration is measured in days.
+
+| admission | Origin | Destination | startdatetime | enddatetime | ICU admittance | Duration |
+| --------: | :----- | :---------- | :------------ | :---------- | :------------- | -------: |
+| 14 | Other hospital | ICU | 2023-01-14 10:49:33 | 2023-01-17 09:49:33 | No | 2.96 |
+| 14 | Ward | Home | 2023-01-17 09:49:33 | 2023-02-12 12:49:33 | Yes | 26.12 |
+| 50 | Home | Home | 2023-01-28 19:32:20 | 2023-02-07 17:32:20 | No | 9.92 |
+| 57 | Home | Home | 2023-01-29 17:49:43 | 2023-02-04 06:49:43 | No | 5.54 |
+
+Timestamps are displayed in UTC using YYYY-MM-DD HH:MM:SS.
+ICU admittance indicates whether the current pathway stage is an
+ICU stay; Destination identifies where the patient goes next.
 
 ## Author
 
